@@ -11,49 +11,38 @@ def calculate_zscore_mad(df, y_col):
     return df
 
 def apply_isolation_forest_train_test(df, y_col, contamination_iso):
-    # Split the data into training and test sets
     train_size = 2920
     train_data = df.iloc[:train_size]
     test_data = df.iloc[train_size:]
 
-    # Fit Isolation Forest on the training set
     iso_forest = IsolationForest(contamination=contamination_iso, random_state=42)
 
     X_train = train_data[y_col].values.reshape(-1, 1)
     iso_forest.fit(X_train)
 
-    # Predict anomalies on the test set using Isolation Forest
     preds_iso_forest = iso_forest.predict(test_data[y_col].values.reshape(-1, 1))
 
-    # Add a new column for anomalies detected by Isolation Forest
     test_data['anomaly_iforest'] = preds_iso_forest
 
-    # Combine the results for visualization
     df_result = pd.concat([train_data, test_data])
 
     return df_result
 
 def apply_local_outlier_factor_train_test(df, y_col):
-    # Split the data into training and test sets
     train_size = 2920
     train_data = df.iloc[:train_size]
     test_data = df.iloc[train_size:]
 
-    # Fit Local Outlier Factor on the training set
     contamination_lof = 1 / len(train_data)
     lof = LocalOutlierFactor(n_neighbors=20, contamination=contamination_lof)
 
-    # Predict anomaly scores on the test set using Local Outlier Factor
     scores_lof = lof.fit_predict(test_data[y_col].values.reshape(-1, 1))
 
-    # Add a new column for anomaly scores from Local Outlier Factor
     test_data['score_lof'] = -scores_lof  # Make scores positive for consistency
 
-    # Set a threshold to classify anomalies for LOF
     lof_threshold = test_data['score_lof'].quantile(0.95)  # Example: 95th percentile
     test_data['anomaly_lof'] = np.where(test_data['score_lof'] > lof_threshold, -1, 1)
 
-    # Combine the results for visualization
     df_result = pd.concat([train_data, test_data])
 
     return df_result
@@ -75,7 +64,6 @@ def identify_anomalies(df, x_col, y_col, detection_method, contamination_iso):
         st.subheader('Anomalies Detected by Local Outlier Factor:')
         st.write(f'Total Anomalies (Local Outlier Factor): {len(anomalies_df)}')
 
-    # Plotting anomalies with interactive features
     fig = px.line(df, x=x_col, y=y_col, title=f'{y_col} with Anomalies')
     fig.update_layout(
         xaxis=dict(title=x_col),
@@ -96,13 +84,11 @@ def identify_anomalies(df, x_col, y_col, detection_method, contamination_iso):
         )
         st.write(f'Anomaly Threshold: {anomaly_threshold:.2f}')
 
-        # Display table with data values for anomalies
         st.subheader('Data Values for Detected Anomalies:')
         st.write(anomalies_df)
 
     st.plotly_chart(fig)
 
-    # Confusion matrix
     if detection_method == 'Z-Score':
         cm = confusion_matrix(df['label'], np.where(df['z_score'] > 2, 1, 0))
         st.subheader('Confusion Matrix for Z-Score:')
@@ -115,7 +101,6 @@ def identify_anomalies(df, x_col, y_col, detection_method, contamination_iso):
 
     st.table(pd.DataFrame(cm, columns=['Predicted Normal', 'Predicted Anomaly'], index=['Actual Normal', 'Actual Anomaly']))
 
-    # Pie chart for distribution of inliers and outliers
     st.subheader('Distribution of Inliers and Outliers:')
     labels = ['Normal (Inliers)', 'Anomalous (Outliers)']
 
