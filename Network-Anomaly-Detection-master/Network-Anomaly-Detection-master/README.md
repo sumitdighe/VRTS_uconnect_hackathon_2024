@@ -1,25 +1,44 @@
 # Network Anomaly Detector
 
 ## Overview
-This repository contains a project which can detect network anomalies from the packets sent to and from a specific system. It takes a `.pcap` file as an input, and generates a `.csv` report with 3 columns: Source IP, timestamp and column which signifies whether an anomaly was detected at that time and from that IP (1 for anomaly detected, 0 for not detected). There is a minimal UI to run this as well, usage outlined below.
-## Metrics
-The metrics we obtained during testing of the ML models is
-```
-Accuracy: 99.6%
-Precision: 98.8%
-Recall: 99.0%
-F1 score: 98.9%
-```
-For more information, refer to the notebooks in `network-anomaly-detection/models/`.
-## Usage
-### Installation
-```bash
-git clone https://github.com/KapilM26/license-plate-reader.git
-cd network-anomaly-detection
-pip3 install -r requirements.txt
-```
-### Running the server
-```
+
+The Network Anomaly Detector is designed to enhance cybersecurity by detecting anomalies in network traffic. The application takes a `.pcap` file as input, analyzes the packets, and generates a comprehensive `.csv` report.
+
+## Business Value
+
+- **Improved Security:** Identify and respond to network anomalies to prevent potential cyber threats.
+- **Operational Continuity:** Maintain uninterrupted operations, minimizing the risk of downtime.
+
+## Time to Market
+
+Quick and efficient deployment with modular design and easy integration.
+
+## Innovation and Efficiency
+
+Innovative machine learning models ensure high accuracy, leveraging advanced metrics for reliable anomaly detection.
+
+## User Experience
+
+Minimal UI for easy `.pcap` file uploads and detailed anomaly reports in a user-friendly format.
+
+## X Factor
+
+Exceptional metrics (Accuracy: 99.6%, Precision: 98.8%, Recall: 99.0%, F1 score: 98.9%) highlight effectiveness and adaptability.
+
+## Dataset Used
+
+- [UNSW-NB15 Dataset](https://www.kaggle.com/input/nsw-full/UNSW-NB15_2.csv)
+
+## Algorithm Used
+
+Random Forest Classifier for robust anomaly detection.
+
+## Django Integration
+
+Utilizes Django framework for web application development.
+
+### Running the Server
+
 cd network_intrusion
 python manage.py runserver
 ```
