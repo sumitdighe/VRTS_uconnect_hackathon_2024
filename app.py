@@ -159,7 +159,7 @@ def main():
 
     animation_state = "loading"
 
-    lottie_coding = load_lottiefile("/content/coding2.json")
+    lottie_coding = load_lottiefile("Animation.json")
 
     def display_animation():
         st_lottie(
