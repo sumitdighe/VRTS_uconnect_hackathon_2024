@@ -15,8 +15,7 @@ import (
 	"github.com/golang/glog"
 	"github.com/mitchellh/go-ps"
 	"k8s.io/kubernetes/pkg/util/mount"
-
-	"github.com/yandex-cloud/k8s-csi-s3/pkg/s3"
+	"csi-driver.com/Go-files/server"
 )
 
 // Mounter interface which can be implemented
@@ -26,50 +25,15 @@ type Mounter interface {
 }
 
 const (
-	s3fsMounterType     = "s3fs"
-	geesefsMounterType  = "geesefs"
-	rcloneMounterType   = "rclone"
-	TypeKey             = "mounter"
-	BucketKey           = "bucket"
-	OptionsKey          = "options"
+	geesefsMounterType = "geesefs"
+	TypeKey            = "mounter"
+	BucketKey          = "bucket"
+	OptionsKey         = "options"
 )
 
-// New returns a new mounter depending on the mounterType parameter
+// New returns a new GeeseFS mounter
 func New(meta *s3.FSMeta, cfg *s3.Config) (Mounter, error) {
-	mounter := meta.Mounter
-	// Fall back to mounterType in cfg
-	if len(meta.Mounter) == 0 {
-		mounter = cfg.Mounter
-	}
-	switch mounter {
-	case geesefsMounterType:
-		return newGeeseFSMounter(meta, cfg)
-
-	case s3fsMounterType:
-		return newS3fsMounter(meta, cfg)
-
-	case rcloneMounterType:
-		return newRcloneMounter(meta, cfg)
-
-	default:
-		// default to GeeseFS
-		return newGeeseFSMounter(meta, cfg)
-	}
-}
-
-func fuseMount(path string, command string, args []string, envs []string) error {
-	cmd := exec.Command(command, args...)
-	cmd.Stderr = os.Stderr
-	// cmd.Environ() returns envs inherited from the current process
-	cmd.Env = append(cmd.Environ(), envs...)
-	glog.V(3).Infof("Mounting fuse with command: %s and args: %s", command, args)
-
-	out, err := cmd.Output()
-	if err != nil {
-		return fmt.Errorf("Error fuseMount command: %s\nargs: %s\noutput: %s", command, args, out)
-	}
-
-	return waitForMount(path, 10*time.Second)
+	return newGeeseFSMounter(meta, cfg)
 }
 
 func Unmount(path string) error {
@@ -86,8 +50,8 @@ func SystemdUnmount(volumeID string) (bool, error) {
 		return false, err
 	}
 	defer conn.Close()
-	unitName := "geesefs-"+systemd.PathBusEscape(volumeID)+".service"
-	units, err := conn.ListUnitsByNames([]string{ unitName })
+	unitName := "geesefs-" + systemd.PathBusEscape(volumeID) + ".service"
+	units, err := conn.ListUnitsByNames([]string{unitName})
 	glog.Errorf("Got %v", units)
 	if err != nil {
 		glog.Errorf("Failed to list systemd unit by name %v: %v", unitName, err)

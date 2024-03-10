@@ -1,4 +1,9 @@
 # Team Neutron Hive - Veritas UConnect
+## Team Members:- 
+#### 1. Aradhya Pitlawar ([ThunderSmoker](https://github.com/Thundersmoker))
+#### 2. Tushar Rathod ([calto16](https://github.com/calto16))
+#### 3. Jay Shirgupe ([Jay7221](https://github.com/Jay7221))
+
 
 # CSI for S3
 
@@ -18,9 +23,9 @@ This project implements a Container Storage Interface ([CSI](https://github.com/
 
 To allow shared mounts in the Docker daemon, you can follow these steps:
 
-1. **Locate the Docker systemd unit file:** The Docker systemd unit file is usually located at `/etc/systemd/system/docker.service` or `/lib/systemd/system/docker.service`.
+1. **Locate the Docker systemd unit file:** The Docker systemd unit file is usually located at `/etc/systemd/system/docker.service` or `/lib/systemd/system/docker.service`. Alternatively, you can run "systemctl cat docker.service" to locate file path.
 
-2. **Edit the Docker systemd unit file:** Open the Docker systemd unit file in a text editor.
+2. **Edit the Docker systemd unit file:** Open the Docker systemd unit file in a text editor with sudo permissions.
 
 3. **Add `MountFlags=shared` option:** Add the `MountFlags=shared` option to the `[Service]` section of the unit file. If the `MountFlags` option already exists, append `shared` to the list of flags.
 
@@ -112,7 +117,7 @@ kubectl create -f pod-configuration/storageclass.yaml
     If the pod can start, everything should be working.
   
 
-### Alternatively , you can run "sudo ./run-csi.sh" in /Execuatbles to automate above complete  process 
+### Alternatively , you can run "sudo ./run-csi.sh" in /Execuatbles to automate above complete  process
 
 4. Test the mount
 
