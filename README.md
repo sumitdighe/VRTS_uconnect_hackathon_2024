@@ -1,6 +1,6 @@
 # Anomaly Detection System for Structured Workloads
 
-[Watch our system in action on YouTube!](https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://www.youtube.com/watch?v=008oyHMFRUc&t=21s)
+[Watch our system in action on YouTube!](https://www.youtube.com/watch?v=008oyHMFRUc&t=21s)
 
 ## Overview
 
