@@ -1,0 +1,13 @@
+.warnings{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.warning{
+    text-align: center;
+    display: flex;
+    margin-left: 22%;
+    font-size: 18px;
+}

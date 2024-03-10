@@ -3,6 +3,7 @@ import random
 import json
 import pandas as pd
 
+
 class DatasetGenerator:
     def __init__(self):    
         self.queries = ["SELECT","INSERT","UPDATE","DELETE","ALTER"]
@@ -15,6 +16,7 @@ class DatasetGenerator:
         self.avg_data_sizes = list()
         self.frequency_scores = list()
         
+
     def read_schema_info(self):
     
         with open("schema.json","r") as json_file:
@@ -36,6 +38,7 @@ class DatasetGenerator:
             ind=2
             
         return self.permissions[role][table_name][ind]
+    
     
     def get_avg_size(self,tables_selected):
         avg_size=0.0
@@ -70,6 +73,7 @@ class DatasetGenerator:
             return 0.6
         else:
             return 0.5
+        
         
     def generate_data(self,query_type):
         
