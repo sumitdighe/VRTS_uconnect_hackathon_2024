@@ -8,7 +8,7 @@ To compile the code in the machine, follow these steps:
 The background processes consist of four command prompts that operate inconspicuously. Notifications for the user will be exclusively provided through pop-up messages.
 In the matrix, a value of 1 signifies normal behavior, while -1 indicates anomalies. Specifically, pop-up notifications will be generated for -1 values associated with CPU and disk events.
 
-Demo Video Link: [https://drive.google.com/file/d/1utAWGlnsi4t9RZffXebrx6iZHcsX_BLH/view?usp=drive_link](url)
+[Demo Video Link](url): 
 
 
 
