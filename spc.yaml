@@ -1,0 +1,13 @@
+apiVersion: openebs.io/v1alpha1
+kind: StoragePoolClaim
+metadata:
+  name: s3-storage-pool
+  namespace: openebs
+spec:
+  name: s3-pool
+  type: disk
+  poolSpec:
+    poolType: striped
+    disks:
+      - diskID: ata-VBOX_HARDDISK_VB31b2d6e9-6c77bf06
+
