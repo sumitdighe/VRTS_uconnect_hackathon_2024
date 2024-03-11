@@ -2,7 +2,8 @@ VRTS_uconnect_hackathon_2024
 
 # Total Cost of Ownership (TCO) Calculator
 
-# [Demo Video](https://drive.google.com/file/d/1AmzbrY57ypfRXHHEynw6DGFBzpySruL2)
+# [Main Demo Video (with audio)](https://drive.google.com/file/d/1WitQNpbYeE9rFsZl8qb3XI6TzdQXq5uf)
+### [Proper Dynamic Code Implemenation(no audio)](https://drive.google.com/file/d/1AmzbrY57ypfRXHHEynw6DGFBzpySruL2)
 
 
 ## Team Information
