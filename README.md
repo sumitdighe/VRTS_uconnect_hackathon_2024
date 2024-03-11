@@ -161,7 +161,7 @@ If the bucket is specified, it will still be created if it does not exist on the
 
 ### Mounter
 
-We are using [GeeseFS](https://github.com/yandex-cloud/geesefs).
+We are using GeeseFS.
 
 
 #### GeeseFS
