@@ -13,6 +13,26 @@ Our system proposes an innovative approach to anomaly detection tailored for str
 - **Database: MySQL (Hosted on GCP)**
 - **API Testing: Postman**
 
+## Dependencies
+
+### Frontend React
+
+- React-router-Dom
+- React-BootStrap
+- '@dotlottie/react-player
+
+### Backend Django
+
+- sql
+- sql-metadata
+- sqlvalidator
+- scikitlearn
+- numpy
+- pandas
+- django rest framework
+- cors headers
+
+
 ## Roles and Access Rights
 
 The system acknowledges five distinct roles within the database environment:
