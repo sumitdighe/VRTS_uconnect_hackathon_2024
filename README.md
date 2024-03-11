@@ -11,7 +11,7 @@ A brief description of what this project does and who it's for
 
 - The AWS setup includes a CodePipeline for complete CI/CD integration.
 
-[Recorded Video (Click Me)](https://drive.google.com/drive/folders/1zrvoQ53PuZhymAsZaxuBJpHfAEYbgfak?usp=sharing)
+[Recorded Video (Click Me)](https://youtu.be/jB9jTphWZkw)
 
 Cloud Total Cost of Ownership (TCO) is a comprehensive analysis that evaluates the overall expenses associated with adopting and operating cloud-based services or infrastructure over a specified period.
 
