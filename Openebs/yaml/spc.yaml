@@ -1,7 +1,7 @@
 apiVersion: openebs.io/v1alpha1
-kind: StoragePool
+kind: StoragePoolClaim
 metadata:
-  name: s3-pool
+  name: s3-storage-pool
   namespace: openebs
 spec:
   name: s3-pool
