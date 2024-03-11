@@ -1,9 +1,0 @@
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: s3-cstor-sc
-provisioner: openebs.io/provisioner-iscsi
-parameters:
-  openebs.io/cas-type: cstor
-  openebs.io/cstor-pool: s3-storage-pool
-
