@@ -17,12 +17,21 @@ Welcome to the Total Cost of Ownership (TCO) Calculator, a submission for the Ve
 TCO is a financial metric that estimates and compares the costs of a product or service. Our TCO Calculator model provides a comprehensive analysis, comparing the cost of different cloud vendors and on-premises deployments. It factors in server specifications, storage requirements, and labor costs, alongside network demands, to deliver a detailed total cost of ownership estimation.
 
 ## Installation
+### For Google Colaboratory : 
 To run the TCO Calculator, follow these steps:
 1. Open the provided TCOFinal.ipynb file in Google Colab or any Jupyter Notebook environment.
 2. Execute the notebook cells sequentially to run the TCO calculator.
 3. Ensure you have an active internet connection to download the `model.pkl` file during execution.
 
-For a visual guide on how to install and use the TCO Calculator, refer to the demo video included in the presentation.
+### For Website Execution (Flask):
+To run the TCO Calculator as a website using Flask, follow these steps:
+1. Clone the repository from GitHub.
+2. Open the project in Visual Studio Code (VSCode) or any other text editor.
+3. Install Flask and any other required dependencies by running `pip install flask`.
+4. Navigate to the `FrontendWithFlask` folder.
+5. Run the Flask application by executing `python app.py` in the terminal.
+6. Access the TCO Calculator website by opening a web browser and entering `http://localhost:5000` in the address bar.
+For a visual guide on how to install and use the TCO Calculator, refer to the demo video added in TeamImposters Repository
 
 ## Features
 ### Inputs:
