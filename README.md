@@ -14,11 +14,7 @@ This project is a web-based anomaly detection system for monitoring database act
 ## Installation
 
 ```bash
-# Clone this repository using the following command:
-git clone <repository_url>
-
-# Navigate to the project directory:
-cd <repository_name>
+# Direct to "Veritas Hackathon New Final" folder and clone it
 
 # Install the required dependencies:
 pip install -r requirements.txt
