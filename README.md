@@ -39,4 +39,4 @@ View the plotted data points to monitor anomalies.
 --------------------------------------------
 
 
-### This README.md provides instructions on installation, usage, and the features of the anomaly detection system with included bash scripts.
+### This README.md provides instructions on installation, usage, and the features of the anomaly detection system
