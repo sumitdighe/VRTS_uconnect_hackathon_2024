@@ -9,12 +9,12 @@ This repository contains code for an Anomaly Detection System built using Stream
 ### **Installation Steps**
 
 To run the Anomaly Detection System, follow these steps:
-1.	Install the required Python packages:
+1.	Install the required Python packages: <br>
   !pip install streamlit, pycaret, streamlit_lottie, pytz 
 
 2. Create a file named app.py and add all your code in this file.
 
-3.	Execute the command in a terminal or shell environment, it will retrieve and display the public IPv4 address of the machine. Copy the address generated in the tunnel website <br>
+3.	Execute the command in a terminal or shell environment, it will retrieve and display the public IPv4 address of the machine. Copy the address generated in the tunnel website: <br>
   !wget -q -O - ipv4.icanhazip.com
 
 5.	Run the Streamlit app and localtunnel for exposing the web application: <br>
