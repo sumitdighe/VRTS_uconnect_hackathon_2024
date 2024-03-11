@@ -74,3 +74,11 @@ The Query Parser component is responsible for parsing queries and extracting cri
 ## Mediator
 
 The Mediator component simulates the potential impact of query execution on tables within the database. It estimates the average size of data that could be affected by the query.
+
+## ML Model
+
+The model is used for classifying the query as an abnormal, possibly abnormal or a normal query. 
+Wr have made use of the K means clustering algorithm on our unlabelled dataset with 3 clusters corresponding to the three labels.
+After running K means on the dataset, we append the labels to the dataset after which the dataset becomes labelled.
+
+Then we have used the Naive Bayes algorithm on this labelled dataset to further improve the accuracy.
