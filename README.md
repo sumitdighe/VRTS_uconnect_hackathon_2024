@@ -78,7 +78,7 @@ The Mediator component simulates the potential impact of query execution on tabl
 ## ML Model
 
 The model is used for classifying the query as an abnormal, possibly abnormal or a normal query. 
-Wr have made use of the K means clustering algorithm on our unlabelled dataset with 3 clusters corresponding to the three labels.
+We have made use of the K means clustering algorithm on our unlabelled dataset with 3 clusters corresponding to the three labels.
 After running K means on the dataset, we append the labels to the dataset after which the dataset becomes labelled.
 
 Then we have used the Naive Bayes algorithm on this labelled dataset to further improve the accuracy.
