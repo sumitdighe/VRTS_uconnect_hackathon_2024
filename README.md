@@ -4,7 +4,7 @@
 ### **AI Powered Anomaly Detection System**
 
 ### **Overview**
-This repository contains code for an Anomaly Detection System built using Streamlit. The system can analyze CSV data, log files, or real-time system resource usage to detect anomalies. It leverages machine learning models such as Isolation Forest, Local Outlier Factor, Z-score along with Pycaret library for anomaly detection.
+This repository contains code for an Anomaly Detection System built using Streamlit. The system can analyze CSV data, log files, and real-time system resource usage to detect anomalies. It leverages machine learning models such as Isolation Forest, Local Outlier Factor, Z-score along with Pycaret library for anomaly detection.
 
 ### **Installation Steps**
 
@@ -12,12 +12,12 @@ To run the Anomaly Detection System, follow these steps:
 1.	Install the required Python packages:
   !pip install streamlit, pycaret, streamlit_lottie, pytz 
 
-2. Create a file named app.py and all your code in this file.
+2. Create a file named app.py and add all your code in this file.
 
-3.	Execute the command in a terminal or shell environment, it will retrieve and display the public IPv4 address of the machine. Copy the address generated in the tunnel website
+3.	Execute the command in a terminal or shell environment, it will retrieve and display the public IPv4 address of the machine. Copy the address generated in the tunnel website <br>
   !wget -q -O - ipv4.icanhazip.com
 
-4.	Run the Streamlit app and localtunnel for exposing the web application:
+5.	Run the Streamlit app and localtunnel for exposing the web application: <br>
   !streamlit run app.py & npx localtunnel --port 8501
 
 
