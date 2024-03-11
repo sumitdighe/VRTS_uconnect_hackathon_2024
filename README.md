@@ -27,7 +27,10 @@ https://drive.google.com/drive/folders/1SnR2C6_N5Q6rnAF0ZvhaWZuekidivCla?usp=sha
 
 ## Contact
 
-Team Leader: Najeeb Saiyed
-+91 8128026682
+Team Leader: Najeeb Saiyed (+91 8128026682)
+
+
 Team Member: Shlok Nandubarkar
+
+
 Team Name: Aayush Rajput
