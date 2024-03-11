@@ -3,7 +3,7 @@ VRTS_uconnect_hackathon_2024
 
 DRIVE LINKS:
 (VM Workload Predictor) https://drive.google.com/drive/folders/12OGKrDq69AVGM3h3nKoDWEJjSrLsbvBP?usp=drive_link
-(TCO Calculator & Cloud Consultant) 
+(TCO Calculator & Cloud Consultant) https://drive.google.com/drive/folders/1SnR2C6_N5Q6rnAF0ZvhaWZuekidivCla?usp=sharing
 
 # TCO Calculator
 
