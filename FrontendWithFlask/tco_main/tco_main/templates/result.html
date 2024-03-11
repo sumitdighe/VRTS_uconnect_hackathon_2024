@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>TCO Calculator Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TCO Calculator Result</h1>
+    <h2>{{ tco_result }}</h2>
+    <h2>Predicted Deployment: {{ predicted_deployment }}</h2>
+    <h1>TCO Calculator Result</h1>
+    <h2>{{ tco_result }}</h2>
+
+    {% if cost_details %}
+    <h3>Cost Breakdown</h3>
+    <ul>
+        {% for component, amount in cost_details.items() %}
+            <li>{{ component }}: ${{ amount }}</li>
+        {% endfor %}
+    </ul>
+    
+        
+</body>
+</html>
