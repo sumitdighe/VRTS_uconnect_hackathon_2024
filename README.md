@@ -20,6 +20,8 @@ Our system proposes an innovative approach to anomaly detection tailored for str
 - React-router-Dom
 - React-BootStrap
 - @dotlottie/react-player
+- react-lottie
+- @react-login-page/base
 
 ### Backend Django
 
