@@ -2,10 +2,10 @@
 
 # Command 5
 echo "Deleting POD..."
-sudo kubectl delete pod csi-s3-test-nginx
+sudo kubectl delete pod s3fs-test-nginx
 
 # Command 1
-cd .../deploy/
+cd ../deploy/
 
 # Command 2
 echo "Deleting Secrets..."

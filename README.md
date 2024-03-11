@@ -10,6 +10,12 @@
 This project implements a Container Storage Interface ([CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md)) driver for mounting S3 compatible object to Kubernetes pods as a file-system via FUSE.
 
 
+# DEMO VIDEO
+
+
+[![Demo video](https://img.youtube.com/vi/qZDe0k7s0XQ/0.jpg)](https://www.youtube.com/watch?v=qZDe0k7s0XQ)
+Click [here](https://www.youtube.com/watch?v=qZDe0k7s0XQ) to watch
+
 ## Kubernetes installation
 
 ### Requirements
@@ -108,6 +114,9 @@ kubectl create -f pod-configuration/storageclass.yaml
     csi-s3-pvc   Bound     pvc-c5d4634f-8507-11e8-9f33-0e243832354b   2Gi        RWO            csi-s3         9s
     ```
 
+### Alternatively , you can run "sudo ./run-csi.sh" in /Execuatbles to automate above complete  process
+
+
 3. Create a test pod which mounts your volume:
 
     ```bash
@@ -116,8 +125,6 @@ kubectl create -f pod-configuration/storageclass.yaml
 
     If the pod can start, everything should be working.
   
-
-### Alternatively , you can run "sudo ./run-csi.sh" in /Execuatbles to automate above complete  process
 
 4. Test the mount
 

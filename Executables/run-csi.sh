@@ -33,6 +33,4 @@ sudo kubectl create -f pod-configuration/pvc.yaml
 echo "Checking Bound status"
 sudo kubectl get pvc csi-s3-pvc
 
-# Command 5
-echo "Creating POD..."
-sudo kubectl create -f pod-configuration/pod.yaml
+
