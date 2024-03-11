@@ -22,11 +22,13 @@ cd <repository_name>
 
 # Install the required dependencies:
 pip install -r requirements.txt
+```
 
-Usage
+## Usage
+```bash
 # Run the Flask application by executing:
 python app.py
-
+```
 Access the application in your web browser at http://localhost:5000.
 
 Enter the timestamp and value for new data points to be added.
