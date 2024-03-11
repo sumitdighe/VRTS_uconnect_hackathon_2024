@@ -15,7 +15,7 @@ This project implements a Container Storage Interface ([CSI](https://github.com/
 
 [![Demo video](https://img.youtube.com/vi/qZDe0k7s0XQ/0.jpg)](https://www.youtube.com/watch?v=qZDe0k7s0XQ)
 
-###### Click [here](https://www.youtube.com/watch?v=qZDe0k7s0XQ) to watch
+##### Click [here](https://www.youtube.com/watch?v=qZDe0k7s0XQ) to watch
 
 ## Kubernetes installation
 
