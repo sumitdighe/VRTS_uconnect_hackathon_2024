@@ -36,4 +36,7 @@ Enter the timestamp and value for new data points to be added.
 View the plotted data points to monitor anomalies.
 
 
-This README.md provides instructions on installation, usage, and the features of the anomaly detection system with included bash scripts.
+--------------------------------------------
+
+
+### This README.md provides instructions on installation, usage, and the features of the anomaly detection system with included bash scripts.
