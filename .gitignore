@@ -3,3 +3,4 @@ dbs/venv
 .env
 dbs/.env
 dbsecure/.env
+dbs/db.sqlite

@@ -7,9 +7,10 @@ from starlette.requests import Request
 from starlette.responses import Response
 from starlette.middleware.base import RequestResponseEndpoint
 import pyodbc
-
 import dbsecure.mysql
-# Load environment variables
+
+
+
 load_dotenv()
 
 MYSQL_HOST = os.getenv("MYSQL_HOST")
@@ -58,34 +59,39 @@ async def create(id:int):
     except Exception as e:
         print(e)
 
-class DatabaseQueryInterceptorMiddleware(BaseHTTPMiddleware):
-    async def dispatch(
-        self, request: Request, call_next: RequestResponseEndpoint
-    ) -> Response:
-        try:
-            raw_query = get_raw_query_from_request(request)
-            processed_query = process_query_with_interceptor(raw_query)
-            set_raw_query_to_request(request, processed_query)
-            response = await call_next(request)
-            return response
-        except Exception as e:
-            raise e
+async def frequency_hit():
+    query='INSERT INTO test VALUES (%s)'
+    conn=await connect()
+    cursor=conn.cursor()
+    for i in range(10):
+        values=(i,)
+        await cursor.execute(query,values)
+    conn.commit()
+    await conn.close()
 
-def get_raw_query_from_request(request: Request) -> str:
-    # Implement logic to extract raw query from the request
-    # For example, if using SQLAlchemy, you might access the query from request state
-    return getattr(request.state, "db_query", "")
-
-
-def set_raw_query_to_request(request: Request, query: str):
-    # Implement logic to set the processed query back to the request
-    # For example, if using SQLAlchemy, you might set it in request state
-    request.state.db_query = query 
-
-
-def process_query_with_interceptor(raw_query: str) -> str:
-    # Implement logic to intercept and modify the query
-    # For example, you can add a comment to the query
-    return f"/* Interceptor added */ {raw_query}"
-
-
+async def delay_hit():
+    query='SELECT * FROM test'
+    conn=await connect()
+    cursor=conn.cursor()
+    print('sending request 1')
+    result=await cursor.execute(query,())
+    print('sending request 2')
+    query='SELECT SLEEP(3)'
+    await cursor.execute(query,()) 
+    await conn.close()
+    return result
+        
+async def volume_hit():
+    query="""with recursive rnums as (
+        select 1 as n
+            union all
+        select n+1 as n from rnums
+         where n <101
+        )
+    select * from rnums
+    ;"""
+    conn=await connect()
+    cursor=conn.cursor()
+    result=await cursor.execute(query,())
+    await conn.close()
+    return result

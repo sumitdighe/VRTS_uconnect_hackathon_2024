@@ -1,5 +1,6 @@
 import json
 import socket
+import time
 from dotenv import load_dotenv
 import os
 import asyncio
@@ -17,9 +18,20 @@ class Cursor:
        await self.ws.send(json.dumps({'action':'query','user':self.user,'query':query}))
        response=await self.ws.recv()
        data=json.loads(response)
+       print(data)
        if(data['flag']):
-            print('executing')
-            self.original_cursor.execute(query,value)
+            try:
+                print(f'executing {query}')
+                start_time=time.time()
+                self.original_cursor.execute(query,value)
+                delta=time.time()-start_time
+                count=self.original_cursor.rowcount
+                fetch=self.original_cursor.fetchall()
+                print(delta,count,fetch)
+                await self.ws.send(json.dumps({'action':'result','delta':delta,'fetch':fetch,'count':count}))
+                await self.ws.recv()
+            except Exception as e:
+                print(e)
        return self.original_cursor
 class Connection:
     def __init__(self) -> None:
@@ -42,6 +54,6 @@ class Connection:
         self.connection.close()
     def get_server_ip():
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))  # Connect to a public DNS server
+        s.connect(("8.8.8.8", 80))  
         return s.getsockname()[0] 
 

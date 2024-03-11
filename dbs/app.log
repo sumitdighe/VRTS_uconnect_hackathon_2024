@@ -1,1 +1,25 @@
-INFO:root:New IP logged: 172.21.216.29
+WARNING:root:New IP logged: 172.21.216.29
+WARNING:root:New query class (INSERT INTO test VALUES (%s)) detected for user shrikant
+WARNING:root:High request frequency detected: 29.00 requests/second
+WARNING:root:New query class (SELECT * FROM test) detected for user shrikant
+WARNING:root:New query class (SELECT SLEEP(3)) detected for user shrikant
+WARNING:root:High request frequency detected: 3.00 requests/second
+WARNING:root:High request frequency detected: 4.00 requests/second
+WARNING:root:High request frequency detected: 7.00 requests/second
+WARNING:root:High request frequency detected: 18.00 requests/second
+WARNING:root:High request frequency detected: 15.00 requests/second
+WARNING:root:High request frequency detected: 14.00 requests/second
+WARNING:root:High request frequency detected: 5.00 requests/second
+WARNING:root:Anomaly detected: Delay (18.52) exceeds threshold (2.00)
+WARNING:root:High request frequency detected: 4.00 requests/second
+WARNING:root:New query class (with recursive rnums as (
+        select 1 as n
+            union all
+        select n+1 as n from rnums
+         where n <101
+        )
+    select * from rnums
+    ;) detected for user shrikant
+WARNING:root:Anomaly detected: Delay (52.72) exceeds threshold (2.00)
+WARNING:root:Output result size anomalous; 101 rows fetched
+WARNING:root:New query class (INSERT INTO test VALUES (?)) detected for user shrikant
