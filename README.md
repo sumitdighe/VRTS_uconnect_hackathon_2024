@@ -10,6 +10,9 @@ In the matrix, a value of 1 signifies normal behavior, while -1 indicates anomal
 
 Demo video link: https://drive.google.com/file/d/1utAWGlnsi4t9RZffXebrx6iZHcsX_BLH/view?usp=drive_link 
 
+During a testing phase, a sudden network lag was encountered. The application adeptly identified this anomalous network behavior and promptly issued a warning alert on the monitor. Hence we can clearly state that the application works well in detecting unusual behaviour.
+Link to anomaly detected demo: 
+
 
 
 > Key points:
@@ -20,4 +23,6 @@ Demo video link: https://drive.google.com/file/d/1utAWGlnsi4t9RZffXebrx6iZHcsX_B
 
 **Multithreading** for multiple programs to run simultaneously. Detection for network and hardware (cpu, disk work in parallel).
 Since the program is running continuously in the background, detection for each should be continuously done in parallel. ->Lightweight application
+
+
 
