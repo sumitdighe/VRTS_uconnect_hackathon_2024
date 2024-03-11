@@ -6,6 +6,13 @@
 
 Our system proposes an innovative approach to anomaly detection tailored for structured workloads such as databases. By extracting essential information from queries, we aim to discern user patterns and identify potential deviations from normal behavior.
 
+## Softwares Used / Tech Stack
+Frontend: React
+Backend: Django
+Model and utility programs: Python
+Database: MySQL (Hosted on GCP)
+API Testing: Postman
+
 ## Roles and Access Rights
 
 The system acknowledges five distinct roles within the database environment:
