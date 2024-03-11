@@ -8,6 +8,8 @@
 # CSI for S3
 
 This project implements a Container Storage Interface ([CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md)) driver for mounting S3 compatible object to Kubernetes pods as a file-system via FUSE.
+##### [PPT Link](https://www.canva.com/design/DAF9KNUo4mY/OuM0ppBc16MNESyMq7YuUQ/edit?utm_content=DAF9KNUo4mY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
 
 # DEMO VIDEO
