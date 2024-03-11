@@ -19,9 +19,9 @@ TCO is a financial metric that estimates and compares the costs of a product or 
 ## Installation
 ### For Google Colaboratory : 
 To run the TCO Calculator, follow these steps:
-1. Open the provided TCOFinal.ipynb file in Google Colab or any Jupyter Notebook environment.
-2. Execute the notebook cells sequentially to run the TCO calculator.
-3. Ensure you have an active internet connection to download the `model.pkl` file during execution.
+1. Ensure to run model.ipynb file so that dataset and trained model will be generated
+2. Open the provided TCOFinal.ipynb file in Google Colab or any Jupyter Notebook environment.
+3. Execute the notebook cells sequentially to run the TCO calculator. 
 
 ### For Website Execution (Flask):
 To run the TCO Calculator as a website using Flask, follow these steps:
