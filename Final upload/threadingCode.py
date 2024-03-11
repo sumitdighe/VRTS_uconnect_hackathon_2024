@@ -7,7 +7,7 @@ import time
 def run_script_in_terminal(script):
     os.system(f'start cmd.exe /k {script}')
 
-script1 = "python test2.py"
+script1 = "python netwrokNew.py"
 script2 = "python ModelsForDisk.py"
 script3 = "python ModelsForCpu.py"
 script4 = "python FileChangeLog.py"
