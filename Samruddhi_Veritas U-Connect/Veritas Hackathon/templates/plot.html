@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plot</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Plot of Data Points</h1>
+        <div id="chart"></div>
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Add More Entries</a>
+    </div>
+
+    <script>
+        // Load data points
+        var points = {{ points | safe }};
+        
+        var values = points.map(p => p.value);
+        var timestamps = points.map(p => p.timestamp);
+        var anomalies = points.map(p => p.anomaly);
+
+        var trace1 = {
+            x: timestamps,
+            y: values,
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: 8,
+                color: anomalies.map(a => a === -1 ? 'red' : 'blue') // Color outliers in red, others in blue
+            },
+            name: 'Data Points',
+            text: anomalies.map(a => a === -1 ? 'Anomaly' : 'Normal'), // Text to display on hover
+            hoverinfo: 'x+y+text',
+        };
+        
+        var data = [trace1];
+        
+        var layout = {
+            title: 'Anomaly Detection',
+            xaxis: {
+                title: 'Timestamp'
+            },
+            yaxis: {
+                title: 'Value'
+            },
+            showlegend: true
+        };
+        
+        Plotly.newPlot('chart', data, layout);
+    </script>
+</body>
+</html>
