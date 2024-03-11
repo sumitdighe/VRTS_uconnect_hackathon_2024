@@ -2,6 +2,10 @@ VRTS_uconnect_hackathon_2024: Team Zephyr
 
 Problem Statement: Anomaly detection using data access patterns Write Anomaly detection for Windows/Linux Unstructured file data or NAS file server that analyses unusual user activity and user behavior. User behavior is represented as any user actions performed on the system. Consider using capabilities of File Change Log, API usage, Audit logs, WORM, CPU usage, and unusual disk activity. Leverage AI/ML techniques. Understand different attack patterns and resemble to actions carried out. The algorithm should demonstrate accuracy and consider false positives and false negatives.
 
+Overview:
+This is an application for anomaly detection system using varies python libraries like psutils to access realtime system parameters. The application will detect anomalous behavior on network, cpu, disk and file change logs. The tools used are SVM, Isolation Forest, RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier.
+
+
 
 To compile the code in the machine, follow these steps:
 1. Configure the environment for code execution.
