@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCO Calculator Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .chatbot-button {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TCO Calculator Result</h1>
+    <h2>{{ tco_result }}</h2>
+
+    {% if cost_details %}
+    <h3>Cost Breakdown</h3>
+    <ul>
+        {% for component, amount in cost_details.items() %}
+            <li>{{ component }}: ${{ amount }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+    <p>Predicted Deployment: {{ predicted_deployment }}</p>
+
+{% for filename in graph_filenames %}
+    <img src="{{ url_for('static', filename='images/' + filename) }}" alt="Cost Breakdown Graph">
+{% endfor %}
+    
+    <!-- Chatbot Button -->
+    <a href="https://mediafiles.botpress.cloud/b1f75b8c-4b93-46b2-8839-2392bcb0f88d/webchat/bot.html" class="chatbot-button" target="_blank">Ask Chatbot</a>
+</body>
+</html>
